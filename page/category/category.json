@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "icon": "antd-mini/es/Icon/index",
+    "list-category": "../../components/list-category/list-category"
+  }
+}

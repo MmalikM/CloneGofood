@@ -1,0 +1,10 @@
+<block a:for="{{ list }}">
+  <view onTap="goCategory" data-title={{item.name}}>
+    <view class="type-img">
+      <image mode="scaleToFill" src="{{item.img}}" />
+    </view>
+    <text class="text-list">
+      {{item.name}}
+    </text>
+  </view>  
+</block>

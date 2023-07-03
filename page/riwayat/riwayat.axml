@@ -1,0 +1,84 @@
+
+<block a:for="{{ riwayat }}">
+  <view class="card-riwayat" onTap="goCart" data-index="5" >
+    <view class="riwayat-img" >
+      <view class="image" >
+          <image mode="scaleToFill" src="{{item.img}}" />
+      </view>
+      <view class="detail">
+        <view class="detail-riwayat">
+        <view style="flex:0.5;"/>
+          <view style="flex:1;margin-left:10px;margin-right:10px;display:flex;align-items:center">
+              <text style="font-size:35rpx;font-weight:400;flex:9;white-space: nowrap;overflow: hidden; text-overflow: ellipsis;">{{item.name}}</text>
+              <icon type="LikeOutline" style="flex:1;align-items:center" />
+          </view>
+          <view style="flex:1;">
+            <text style="font-size:20rpx; margin-left:20rpx;color:gray">{{item.tanggal}} ({{item.status}})</text>
+          </view>
+          <view style="flex:1; margin-left:30rpx;">
+            <block  a:for="{{ item.menus }}"  a:for-item="makanan">
+              <text style="font-size:20rpx; color:gray; margin-right:10rpx" a:if="{{ makanan.jmlhBlanja>0 }}" >{{makanan.nameItem}} ({{makanan.jmlhBlanja}})</text> 
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="border-bottom: 1px solid grey;margin-right:5%;margin-left:5%"/>
+    <view class="result">
+        <view style="font-weight:bold;flex:1;display:flex;justify-content:center;align-items:center"> 
+          <text>{{item.total.toLocaleString("id-ID", { maximumFractionDigits: 0 }).replace(/,/g, '.')}}</text> 
+        </view>
+        <view style="flex:2;display:flex; justify-content:center;align-items:center">
+            <text style="font-size:25rpx; margin-left:30rpx; color:gray"> <icon type="StarFill" style="color:orange;margin-right:10rpx"/> {{item.rating}}</text>
+          </view>
+        <view style="flex:1.2;font-weight:bold;display:flex;align-items:center;justify-content:center" >
+          <button onTap="goDetail" data-id="{{item.id}}"  type="light"  shape="capsule" capsuleSize="medium">
+            pesan lagi
+            </button>
+        </view>
+    </view>
+  </view>
+  <view a:if="{{ item.status === 'selesai' }}" class="gv-rating" data-id="{{item.id}}" onTap="clickRating">
+    <view class="box-rating">
+      <view style="flex:3;display:flex;justify-content:center">
+        <text style="font-size:27rpx;font-weight:bold"> Kasih rating, yuk</text>
+      </view>
+      <view  style="flex:4;display:flex;justify-content:center;align-items:center">
+          <icon type="StarFill" style="color:gray;margin-right:10rpx"/>
+          <icon type="StarFill" style="color:gray;margin-right:10rpx"/>
+          <icon type="StarFill" style="color:gray;margin-right:10rpx"/>
+          <icon type="StarFill" style="color:gray;margin-right:10rpx"/>
+          <icon type="StarFill" style="color:gray;margin-right:10rpx"/>
+      </view>
+    </view>
+  </view>  
+  <view class="option" a:if="{{ index===0 || riwayat.length===0 }}">
+    <scroll-view class="scroll-option"  scroll-x="{{true}}"  >
+     <card menu="{{riwayat}}"/>
+    </scroll-view>
+    <text>cobain resto yang mirip-mirip</text>
+  </view>
+</block>
+<popup show="{{popUp}}" position="bottom" onClose="close">
+  <view class="box-bottom">
+    <view class="inner-top-box">
+      <view style="padding-left:30px;padding-top:20px;font-size:30rpx;font-weight:bold;color:white">{{detailRating.name}}</view>
+      <view style="padding-left:30px;padding-top:10px;font-size:25rpx;color:white">{{detailRating.tanggal}}</view>
+    </view>
+    <view class="inner-bottom-box">
+      <view style="display:flex;justify-content:center">
+        <icon type="MinusOutline" style="font-size:40px;font-weight:bold;color:grey" />
+      </view>
+      <view style="display:flex;justify-content:center;font-size:30rpx;font-weight:bold;">
+        Gimana makanannya? 
+      </view>
+      <view  style="display:flex;justify-content:center;align-items:center;margin-top:15px">
+        <icon type="StarFill" style="color:gray;margin-right:10rpx;font-size:30px"/>
+        <icon type="StarFill" style="color:gray;margin-right:10rpx;font-size:30px"/>
+        <icon type="StarFill" style="color:gray;margin-right:10rpx;font-size:30px"/>
+        <icon type="StarFill" style="color:gray;margin-right:10rpx;font-size:30px"/>
+        <icon type="StarFill" style="color:gray;margin-right:10rpx;font-size:30px"/>
+    </view>
+    </view>
+  </view>
+</popup>

@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "",
+  "usingComponents": {
+    "icon": "antd-mini/es/Icon/index",
+    "button": "mini-ali-ui/es/button/index",
+    "card-item":"../../components/card-item/card-item",
+    "list-item":"../../components/list-item/list-item",
+    "popup": "mini-ali-ui/es/popup/index" ,
+    "modal": "mini-ali-ui/es/modal/index"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "Riwayat",
+  "usingComponents": {
+    "icon": "antd-mini/es/Icon/index",
+    "button": "mini-ali-ui/es/button/index",
+    "popup": "mini-ali-ui/es/popup/index" ,
+    "card":"../../components/card/card"
+  }
+}
+

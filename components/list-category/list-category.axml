@@ -1,0 +1,19 @@
+<view class="list-item-category">
+  <view class="img-list-category">
+    <image class="{{isLoading?'skeleton':''}}" mode="scaleToFill" src="{{unit.mainImage}}" onLoad="onImageLoad" />
+  </view>
+  <view style="flex:2.5;display:flex;flex-direction:column">
+    <view style="flex:2;display:flex;flex-direction:column;justify-content:center;">
+      <view class="{{isLoading?'skeleton':''}}" style="flex:1; margin-bottom:10px;display:flex;align-items:end">
+        <text style="font-weight:bold;">{{unit.name.length >25? unit.name.substring(0, 25)+"...": unit.name }}</text>
+      </view>
+      <view class="{{isLoading?'skeleton':''}}" style="flex:1">
+        <text style="font-size:25rpx;color:grey;border-bottom:1px dashed grey;padding-bottom:10rpx">{{unit.category.categoryName}}</text>
+      </view>
+    </view>
+    <view class="{{isLoading?'skeleton':''}}" style="margin-top:5rpx; flex:1;display:flex;">
+      <text style="font-size:25rpx;font-weight:800;color:grey">{{isLoading?'':'Diantar dalam 26 min'}}</text>
+      <text style="font-size:25rpx;color:grey;margin-left:5px"> {{isLoading?'':'( 1.2 Km )'}} </text>
+    </view>
+  </view>
+</view>

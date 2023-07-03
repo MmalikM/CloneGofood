@@ -1,0 +1,79 @@
+<view style="background-color:white">
+  <view class="banner">
+    <view class="space-top" />
+    <view style="margin-left:50rpx;margin-bottom:20rpx; font-weight:bold">
+      Pencarian
+    </view>
+    <view class="search-bar">
+      <search-bar
+        focus="{{true}}"
+        value="{{value}}"
+        placeholder="Cari Makananmu"
+        onInput="onInput"
+        onCancel="onCancel"
+        onClear="onClear"
+        showCancelButton="{{false}}" />
+    </view>
+  </view>
+  
+  <view class="search-container" a:if="{{resultSearch.length===0}}">
+    <view a:if="{{value.length === 0}}">
+      <view style="height:120px"/>
+      <view style="margin:20rpx">
+         <view style="margin:20rpx; font-weight:bold">
+           pencarian terakhir
+         </view>
+         <view style="font-size:30rpx;color:red;padding-left:30rpx" a:if="{{ hot.length ===0 }}">
+           (Belum ada pencarian)
+         </view>
+          <block-list listData="{{hot}}"  className="hot" />
+      </view>
+      <view style="border-bottom: 1px solid grey"/>
+      
+      <view class="option">
+        <view style="margin:20rpx; font-weight:bold">
+         baru saja kamu cari
+        </view>
+        <view style="font-size:30rpx;color:red;padding-left:30rpx" a:if="{{ history.length ===0 }}">
+          (Belum ada pencarian)
+        </view>
+        <scroll-view class="scroll-option"  scroll-x="{{true}}" style="width: 100%" >
+         <card menu="{{history}}"/>
+        </scroll-view>
+      </view>
+    
+      <view style="border-bottom: 1px solid grey"/>
+    
+    </view>
+    <view class="no-search-result" a:else>
+      <view style="height:200px"/>
+      <image src="/image/icon/no_search_result.png" />
+      <text>Search results not found</text>
+    </view>
+  </view>
+  
+  <view a:if="{{ resultSearch.length > 0 && value.length !==0 }}" class="show-result">
+    <view style="height:250rpx"> 
+    </view>
+    <block a:for="{{resultSearch}}">
+      <list-item
+        arrow="{{true}}"
+        multipleLine="{{false}}"
+        key="items-{{item.id}}">
+        <view
+          onTap="onListItemSearch"
+          data-id="{{item.id}}"
+          data-name = "{{item.name}}"
+          style="display: flex; align-items: center">
+          <text class="component-name">{{item.name}}</text>
+        </view>
+      </list-item>
+    </block>
+  </view>
+</view>
+
+
+
+
+
+

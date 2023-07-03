@@ -1,0 +1,39 @@
+
+<container>
+  <view class="banner">
+    <view class="logo" style="opacity: {{titleOpacity}}"><image src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" mode="aspectFit" /></view>
+    <view class="title" style="opacity: {{titleOpacity}}">Mobile Apps</view>
+    <view class="sub-title"style="opacity: {{titleOpacity}}">motto BNI </view>
+  </view>
+</container>
+<view class="container">
+  <container>
+      <title slot="header" class="login">
+        <text class="text-login"> LOGIN</text>
+      </title>
+    <form onSubmit="onSubmit" >
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="UserCircleOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="username" class="input" placeholder="username" />
+        </view>
+      </view>
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="LockOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="password" password class="input" placeholder="password" />
+        </view>
+      </view>
+      <view style="margin-top:50px">
+          <button form-type="submit" type="primary">login</button>
+      </view>
+    </form>
+  </container>
+  <view style="display:flex;justify-content:center;align-items:center; margin-top:50rpx">
+    <text style="color:blue" onTap="goHelp">About BNI ?</text>
+  </view>
+</view>

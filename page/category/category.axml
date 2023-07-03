@@ -1,0 +1,42 @@
+<view style="background-color:white">
+  <view class="category-img">
+    <image mode="scaleToFill" src="https://assets.grab.com/wp-content/uploads/sites/9/2019/04/25172755/imperialblogheader.jpg" />
+  </view>
+  
+  <view style="display:flex;flex-direction:column;padding-left:40px">
+    <text style="font-size:40rpx;font-weight:bold">{{title}}</text>
+    <text style="margin-top:10rpx; color:gray">barang yang sering seklai dibeli</text>
+  </view>
+  
+  <view class="option-filter">
+    <view class="box-filter-list">
+      <icon type="UnorderedListOutline" style="font-weight:bold;"/>
+    </view>
+    <scroll-view class="scroll-type" scroll-x="{{true}}" style="width: 100%" >
+      <view class="box-filter-list">
+        <text>Terdekat</text>
+      </view>
+      <view class="box-filter-list">
+        <text>Bintang 4.5+ </text> 
+      </view>
+      <view class="box-filter-list">
+        <text>Kuliner<icon type="DownOutline" style="font-weight:bold;"/></text>
+      </view>
+      <view class="box-filter-list">
+        <text>Rentan Harga <icon type="DownOutline" style="font-weight:bold;"/></text>
+      </view>
+      <view class="box-filter-list">
+        <text>Promo makanan</text>
+      </view>
+      <view class="box-filter-list">
+        <text>Buka sekarang</text>
+      </view>
+    </scroll-view>
+  </view>
+  
+  <block a:for="{{ menus }}" a:for-item="unit">
+    <list-category  unit={{unit}} />
+  </block>  
+</view>
+
+

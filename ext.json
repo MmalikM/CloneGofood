@@ -1,0 +1,12 @@
+{
+  "extEnable": false,
+  "ext": {},
+  "extPages": {
+    "pages/component/index": {
+      "defaultTitle": "override",
+      "optionMenu": {
+        "icon": "xx"
+      }
+    }
+  }
+}

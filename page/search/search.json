@@ -1,0 +1,15 @@
+{
+  "defaultTitle": "",
+  "transparentTitle": "always",
+  "usingComponents": {
+    "tittle-search": "../../components/title-search/title-search",
+    "icon": "antd-mini/es/Icon/index",
+    "search-bar": "mini-ali-ui/es/search-bar/index",
+    "block-list":"../../components/bloc-list/bloc-list",
+    "card":"../../components/card/card",
+    "list":"mini-ali-ui/es/list/index",
+    "list-item":"mini-ali-ui/es/list/list-item/index"
+  }
+
+}
+

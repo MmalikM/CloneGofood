@@ -1,0 +1,17 @@
+<view class="titleSearch" style="background-color: {{background}}">
+  <view class="titleContainer">
+    <view class="searchBox" style="background-color: {{BGsearch}}">
+      <view class="placeholder">
+        <view>
+          <icon class="iconSearch" type="SearchOutline"/>
+        </view>
+        <view>
+          <text>{{placeholder}}</text>
+        </view>          
+      </view>
+    </view>
+    <view a:if="{{profile}}" class="profile">
+      <icon class="iconProfile" type="UserOutline"/>
+    </view>
+  </view>
+</view>

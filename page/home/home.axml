@@ -1,0 +1,68 @@
+<view style="background-color:white"> 
+  
+  <view class="banner">
+    <view class="space-top" />
+    <alamat/>
+    <view onTap="goSearch" >
+      <tittle-search  placeholder="mau makan apa hari ini?" BGsearch="#e9ecef" />
+    </view>
+  </view>  
+  <view style="height:370rpx"/>
+  
+  <view class="carousol" >
+    <swiper 
+      indicator-dots="true" 
+      autoplay="true"
+      interval=2000
+    >
+        <swiper-item  key="swiper-item-{{index}}" a:for="{{swiper}}" >
+          <view class="img-swiper">
+             <image mode="aspectFit" src="{{item.imgUrl}}" />
+          </view>
+        </swiper-item>
+    
+    </swiper>
+  </view>
+  
+  <view class="option">
+    <view style="font-weight:bold;margin-left:3%">coba cara lain pesen makan </view>
+    <scroll-view class="scroll-option" scroll-x="{{true}}" style="width: 100%" >
+      <block a:for="{{ option }}">
+        <view class="option-img" style="background-color:{{item}}" ></view>
+      </block>
+    </scroll-view>
+  </view>
+  
+  <view class="option">
+    <grid onGridItemClick="onItemClick" columnNum="{{4}}" list="{{fitur}}">
+    </grid>
+  </view>
+  
+  <view class="option">
+    <view style="display:flex;height:100rpx;">
+      <view style="font-weight:bold;margin-left:3%;flex:4;display:flex;align-items:center"> Aneka Kuliner menarik </view>
+      <button onTap="onTest" type="light"  shape="capsule" capsuleSize="large">
+       lihat semua
+      </button>
+    </view>
+    <scroll-view class="scroll-type" scroll-x="{{true}}" style="width: 100%" >
+     <circle-card list="{{list}}" />
+    </scroll-view>
+  </view>
+  
+  <view class="option">
+    <view style="display:flex;height:100rpx;">
+      <view style="font-weight:bold;margin-left:3%;flex:4;display:flex;align-items:center"> Makanan Favorite </view>
+      <button onTap="onTest"  type="light"  shape="capsule" capsuleSize="large">
+       lihat semua
+      </button>
+    </view>
+    <scroll-view class="scroll-option"  scroll-x="{{true}}" >
+      <card menu="{{terlaris}}" />
+    </scroll-view>
+  </view>
+</view>
+
+
+
+

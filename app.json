@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "page/login/login",
+    "page/home/home",
+    "page/profile/profile",
+    "page/webView/webView",
+    "page/search/search",
+    "page/detail-item/detail-item",
+    "page/riwayat/riwayat",
+    "page/category/category",
+    "page/register/register",
+    "page/detail/detail",
+    "page/termOfService/termOfService"
+  ],
+  "tabBar": {
+    "textColor": "#404040",
+    "selectedColor": "#108ee9",
+    "backgroundColor": "#F5F5F9",
+    "items": [
+      {
+        "pagePath": "page/home/home",
+        "icon": "image/icon_component.png",
+        "activeIcon": "image/icon_component_HL.png",
+        "name": "home"
+      },
+      {
+        "pagePath": "page/search/search",
+        "icon": "image/icon_component.png",
+        "activeIcon": "image/icon_component_HL.png",
+        "name": "search"
+      },
+      {
+        "pagePath": "page/riwayat/riwayat",
+        "icon": "image/icon_component.png",
+        "activeIcon": "image/icon_component_HL.png",
+        "name": "riwayat"
+      }
+    ]
+  }
+}

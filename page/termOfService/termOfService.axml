@@ -1,0 +1,39 @@
+<view class="bayar"  >
+  <view class="box-totalan">
+    <view style="height:100rpx;width:80%; display:flex;justify-content:space-around">
+      <button  onTap="goBack" type="ghost"  shape="capsule"  capsuleSize="large">
+        decline
+      </button>
+      <button onTap="goHome"  disabled={{!check}} type="light" shape="capsule" capsuleSize="large">
+        accept
+      </button>
+    </view>
+  </view>
+</view>
+
+<view style="display:flex;flex-direction:column;background-color:white">
+  <view style="display:flex;padding-left:40rpx;align-items:center; height:150rpx;border-bottom:1rpx dashed grey">
+    <text style="font-size:50rpx;font-weight:bold"> 
+      <icon style="margin-right:20rpx;font-size:70rpx" type="ContentOutline" />
+      Term Of Service
+    </text>
+  </view>
+
+  <view style="display:flex;flex-direction:column;padding:30rpx">
+    <block a:for="{{ word }}"> 
+      <view style="margin-bottom:25rpx;text-align:justify">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view style="display:flex;justify-content:center;align-items:center;height:70rpx">
+    <text style="font-size:40rpx;" onTap="accept"> 
+      <icon a:if="{{ check }}" style="margin-right:20rpx;color:green" type="CheckShieldFill" />
+      <icon a:if="{{ !check }}" style="margin-right:20rpx;color:green" type="CheckShieldOutline" />
+     accept term
+    </text>
+  </view>
+  <view style="height:200rpx"/>
+
+</view>

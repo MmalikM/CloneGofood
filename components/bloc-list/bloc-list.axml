@@ -1,0 +1,7 @@
+<view class="block-list-container {{className}}">
+  <view class="block-list">
+    <block a:for="{{listData}}">
+      <view class="block-item" onTap="onItemTap" data-name="{{item.name}}">{{item.name}}</view>
+    </block>
+  </view>
+</view>

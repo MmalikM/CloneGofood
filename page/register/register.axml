@@ -1,0 +1,58 @@
+
+<container>
+  <view class="banner">
+    <view class="logo" style="opacity: {{titleOpacity}}"><image src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" mode="aspectFit" /></view>
+  </view>
+</container>
+<view class="container">
+  <container>
+      <title slot="header" class="login">
+        <text class="text-login"> Register </text>
+      </title>
+    <form onSubmit="onSubmit" >
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="UserCircleOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="username" class="input" placeholder="username" />
+        </view>
+      </view>
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="LockOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="password" password class="input" placeholder="password" />
+        </view>
+      </view>
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="MailOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="email" type="text" class="input" placeholder="email" />
+        </view>
+      </view>
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="PhonebookOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="handphone" type="text" class="input" placeholder="no. handphone" />
+        </view>
+      </view>
+      <view class="form-row">
+        <view class="form-row-label">
+          <icon type="CalendarOutline" style="font-size:33px" />
+        </view>
+        <view class="form-row-content">
+          <input name="age" type="numberpad" class="input" placeholder="age" />
+        </view>
+      </view>
+      <view style="margin-top:50px">
+          <button form-type="submit" type="primary">register</button>
+      </view>
+    </form>
+  </container>
+</view>

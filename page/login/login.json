@@ -1,0 +1,9 @@
+{
+  "transparentTitle": "always",
+  "usingComponents": {
+    "container": "mini-ali-ui/es/container/index",
+    "title": "mini-ali-ui/es/title/index",
+    "popup": "mini-ali-ui/es/popup/index",
+    "icon": "antd-mini/es/Icon/index"
+  }
+}

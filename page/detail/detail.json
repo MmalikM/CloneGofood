@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "detail profile",
+  "usingComponents": {
+    "card": "mini-ali-ui/es/card/index",
+    "list":"mini-ali-ui/es/list/index",
+    "list-item":"mini-ali-ui/es/list/list-item/index",
+    "modal": "mini-ali-ui/es/modal/index",
+    "input-item": "mini-ali-ui/es/input-item/index"
+  }
+}

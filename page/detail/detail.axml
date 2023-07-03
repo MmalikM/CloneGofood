@@ -1,0 +1,54 @@
+<view>
+
+  <view class="container">
+    <view>
+    </view>
+    <view>
+      <card thumb="{{user.image}}" 
+      title="{{user.firstName}}" 
+      subTitle="{{user.birthDate}}" 
+      onCardClick="toggle" 
+      action="edit" 
+      onActionClick="openModal" 
+      extraAction="logout" 
+      onExtraActionClick="onExtraActionClick" 
+      info="{{user.id}}" 
+      expand="{{expand3rd}}" 
+      bgImg="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg"
+      /> 
+    </view>
+    <view style="margin-top: 10px;" />
+      <modal
+      show="{{modalOpened}}"
+      onModalClick="onModalClick"
+      onModalClose="onModalClose"
+      className="modalNih"
+       >
+        <view style="height:500px;width:360px ;background-color:red;display:flex;align-items:center">
+          <form onSubmit="onSubmit">
+            <view class="form-row">
+              <view class="form-row-label">first name</view>
+              <view class="form-row-content">
+                <input-item name="firstName" value="{{user.firstName}}" class="input" placeholder="first name" />
+              </view>
+            </view>
+        
+            <view class="form-row">
+              <view class="form-row-label">age</view>
+              <view class="form-row-content">
+                <input-item name="age" value="{{user.age}}" class="input" placeholder="age" />
+              </view>
+            </view>
+        
+            <view class="form-row">
+              <view class="form-row-label">username</view>
+              <view class="form-edit">
+                <input-item class="input"  name="username" value="{{user.username}}" placeholder="username" />
+              </view>
+            </view>
+            <view slot="footer"  ><button type="primary" size="mini" formType="submit">Submit</button></view>
+          </form>
+        </view>
+      </modal>
+  </view>
+</view>

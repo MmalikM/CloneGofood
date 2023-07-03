@@ -1,0 +1,15 @@
+{
+  "defaultTitle": "",
+  "transparentTitle": "always",
+  "usingComponents": {
+    "tittle-search": "../../components/title-search/title-search",
+    "container": "mini-ali-ui/es/container/index",
+    "icon": "antd-mini/es/Icon/index",
+    "grid":"mini-ali-ui/es/grid/index",
+    "button": "mini-ali-ui/es/button/index",
+    "card":"../../components/card/card",
+    "circle-card": "../../components/cirucular-card/cirucular-card",
+    "alamat":"../../components/alamat/alamat"
+  }
+
+}

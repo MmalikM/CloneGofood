@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "button": "mini-ali-ui/es/button/index",
+    "icon": "antd-mini/es/Icon/index"
+  }
+}

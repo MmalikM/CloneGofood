@@ -1,0 +1,193 @@
+<view class="bayar" a:if="{{ !popUpMenu }}" >
+  <block a:if="{{ totalBayar }}">
+    <view class="box-totalan" onTap="openModal">
+      <view style="flex:2;display:flex;flex-direction:column; padding:25rpx 0rpx 5rpx 40rpx ">
+        <text style="font-weight:bold;color:white"> {{count}} item</text>
+        <text style="font-size:20rpx;color:white" > Pizza Hut Deliveri - PHD, Ciledug Raya </text>
+      </view>
+      <view style="flex:1;display:flex;align-items:center;font-weight:bold;color:white">
+        {{totalBayar.toLocaleString("id-ID", { maximumFractionDigits: 0 }).replace(/,/g, '.')}}
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="header">
+  <view class="img-toko">
+    <view class="border-img">
+      <image mode="scaleToFill" src="{{resultFind.img}}" />
+    </view>
+  </view>
+  <view class="name-toko">
+    <text style="font-size:35rpx;font-weight:bold">{{resultFind.name}}, {{resultFind.lokasi}}</text>
+  </view>
+  <view style="flex:0.75;display:flex;align-items:center">
+    <icon type="RightOutline" style="font-size:20px;font-weight:bold" />
+  </view>
+</view>
+
+<view class="info-menu">
+  <view class="detail-info">
+    <view style="flex:1;display:flex;align-items:end">
+      <text style="font-size:25rpx;font-weight:bold"> <icon type="StarFill" style="color:orange;margin-right:10rpx"/> 4.8</text>
+    </view>
+    <view style="flex:1;font-size:20rpx;margin-top:5px;color:gray">
+      67rb+ rating
+    </view>
+  </view>
+  <view class="detail-info">
+    <view style="flex:1;display:flex;align-items:end">
+      <text style="font-size:25rpx;font-weight:bold"> <icon type="LocationFill" style="color:red;margin-right:5rpx;font-size:15px"/>2.13 KM</text>
+    </view>
+    <view style="flex:1;font-size:20rpx;margin-top:5px;color:gray">
+      Jarak
+    </view>
+  </view>
+  <view class="detail-info">
+    <view style="flex:1;display:flex;align-items:end">
+      <text style="font-size:10rpx;"> 
+        <icon type="PayOutline" style="font-size:18px"/> 
+        <icon type="PayOutline" style="font-size:18px"/> 
+        <icon type="PayOutline" style="font-size:18px"/> 
+        <icon type="PayOutline" style="font-size:18px;opacity:50%"/> 
+      </text>
+    </view>
+    <view style="flex:1;font-size:20rpx;margin-top:5px;color:gray">
+      40rb-100rb
+    </view>
+  </view>
+  <view class="detail-info">
+    <view style="flex:1;display:flex;align-items:end">
+      <text style="font-size:25rpx;font-weight:bold"> <icon type="LikeOutline" style="color:orange;margin-right:10rpx"/> 800+ rating</text>
+    </view>
+    <view style="flex:1;font-size:20rpx;margin-top:5px;color:gray">
+      Rasa enak
+    </view>
+  </view>
+</view>
+
+<view class="box-antar">
+  <view class="outer-box-antar">
+    <view style="height:20%;display:flex;align-items:center">
+      <text style="margin-left:20px;margin-top:5px;font-weight:700;font-size:25rpx;color:green">
+        <icon type="ClockCircleFill"  style="color:green;margin-right:10px" />
+        Mau ngejadwalin pesan antar? Klik "ganti"
+      </text>
+    </view>
+    <view class="inner-box-antar">
+      <view style="display:flex;flex:1;border-bottom:2px solid grey">
+        <view class="box-pesan-antar">
+          <image mode="scaleToFill" src="https://www.jagel.id/api/compicon/v/Pesan-Antar-687T191222199205f131153636361.52719486.png" />
+        </view>
+        <view style="margin-left:3%;flex:3;display:flex;flex-direction:column;justify-content:center">
+          <text style="font-weight:bold;" >Pesan antar</text>
+          <text style="font-size:20rpx;margin-top:10px">tiba 30 min</text>
+        </view>
+        <view style="flex:1.5;display:flex;align-items:center">
+          <button onTap="onTest" type="ghost"  shape="capsule"  capsuleSize="large">
+           Ganti
+          </button>
+        </view>
+      </view>
+      <view style="display:flex;flex:1">
+        <view class="box-pesan-antar">
+          <image mode="scaleToFill" src="https://www.jagel.id/api/compicon/v/Pesan-Antar-687T191222199205f131153636361.52719486.png" />
+        </view>
+        <view style="margin-left:3%;flex:3;display:flex;flex-direction:column;justify-content:center">
+          <text style="font-weight:bold;font-size:22rpx" >Coba Mode Hemat di Checkout</text>
+          <text style="font-size:20rpx;margin-top:10px">tiba 30 min</text>
+        </view>
+        <view style="flex:1.5;display:flex;align-items:center">
+          <button onTap="onTest" type="light" shape="capsule" capsuleSize="large">
+          info
+          </button>
+      </view>
+
+      </view>
+    </view>
+  </view>
+  
+</view>
+
+<block a:for="{{ listMenu }}" a:for-item="title">
+  <view class="box-menu-list">
+    <view class="header-list">
+        {{title}}
+    </view>
+    <view class="body-card" a:if="{{ title === 'Recomended' }}" >
+        <block a:for="{{ resultFind.menus }}" a:for-item="list" >
+         <card-item unit={{list}} title={{title}} onTabList="onTabListMenu" />
+        </block>
+      </view>
+    </view>
+    <view class="body-list" a:if="{{ title!=='Recomended' }}">
+      <block a:for="{{ resultFind.menus}}"  a:for-item="unit">
+       <list-item unit={{unit}} title={{title}} onTabList="onTabListMenu"/>
+      </block>
+    </view>  
+  <view class="line"/>
+</block>
+
+<view style="height:100px"/>
+
+<popup show="{{popUpMenu}}" position="bottom" onClose="closePopUpList">
+  <view style="background-color:white;border-radius:15px">
+    <view style="display:flex;justify-content:center">
+      <icon type="MinusOutline" style="font-size:40px;font-weight:bold;color:grey" />
+    </view>
+    <view class="img-popUp">
+      <image mode="widthFix" src="https://seeklogo.com/images/P/pizza-hut-delivery-logo-0D4BD3755C-seeklogo.com.png" />
+    </view>
+    <view style="padding:10px 15%;display:flex;flex-direction:column;">
+      <text style="font-size:40rpx;font-weight:bold">{{detailItem.nameItem}}</text>
+      <text style="margin-top:10rpx;font-size:25rpx;color:grey">{{detailItem.detail}}</text>
+      <text style="margin-top:10rpx;font-size:28rpx;font-weight:700">{{detailItem.harga.toLocaleString("id-ID", { maximumFractionDigits: 0 }).replace(/,/g, '.')}}</text>
+    </view>
+    <view style="height:100rpx;display:flex;justify-content:center">
+      <view style="height:80%;width:80%;background-color:rgb(39, 189, 39);border-radius:20px;display:flex;justify-content:center;align-items:center">
+        <text style="font-weight:bold;color:white">Tambah Pesanan</text>
+      </view>
+    </view>
+    <view style="height:20px"/>
+  </view>
+</popup>
+
+<modal
+		show="{{modalBayar}}"
+    class="modelBayar"
+	>
+  <view class="body-modal">
+    <view class="sub-body-modal">      
+      <view style="font-size:40rpx;font-weight:bold; margin-bottom:25rpx;border-bottom:1rpx dashed grey">List Pesanan</view>
+      <block a:for="{{ listPesanan }}" a:for-item="pesanan">
+        <view style="display:flex; margin:2px 0rpx;width:100%">
+          <view class="img-modal" style="background-color:aliceblue"> 
+            <image mode="scaleToFill" src="{{pesanan.ImageUrl}}" />
+          </view>
+          <view style="flex:4; display:flex;flex-direction:column; "> 
+            <view style="display:flex;flex-direction:column;border-right:1rpx dashed grey; padding-right:15rpx">
+              <text style="font-weight:bold;">{{pesanan.nameItem.length>13?pesanan.nameItem.substring(0, 10)+"...":pesanan.nameItem}}</text>
+              <text style="font-size:23rpx">{{pesanan.jmlhBlanja}} x {{pesanan.harga}} </text>
+            </view>
+          </view>
+          <view style="flex:1;display:flex;flex-direction:column;align-items:center;margin-left:30rpx">
+            <text >Total</text>
+            <text style="font-weight:bold">
+              {{(pesanan.jmlhBlanja*pesanan.harga).toLocaleString("id-ID", { maximumFractionDigits: 0 }).replace(/,/g, '.')}}
+            </text>
+          </view>
+        </view>
+      </block>
+
+      <view style="margin-top:20rpx; display:flex; justify-content:space-around; border-top:1rpx dashed grey">
+        <button onTap="closeModal" type="ghost"  shape="capsule"  capsuleSize="large">
+          Cancel
+        </button>
+        <button onTap="submitModal" type="light" shape="capsule" capsuleSize="large">
+          Submit
+        </button>
+      </view>
+    </view>
+  </view>
+	</modal>
+

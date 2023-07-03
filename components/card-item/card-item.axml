@@ -1,0 +1,23 @@
+<view class="item-list-recomended" a:if="{{ unit.status === title }}" >
+  <view class="img-unit" >
+    <image mode="scaleToFill" src="{{unit.ImageUrl}}" data-id={{unit.id}} onTap="onTabHandle" />
+  </view>
+  <view style="flex:1.5;display:flex;flex-direction:column;margin-top:10px;margin-left:20px; width:100%;justify-content:center" data-id={{unit.id}} onTap="onTabHandle" >
+    <text style="font-size:35rpx;font-weight:bold">({{unit.id}}) {{unit.nameItem}}</text>
+    <text style="font-size:28rpx;font-weight:bold;margin-top:5px">{{unit.harga.toLocaleString("id-ID", { maximumFractionDigits: 0 }).replace(/,/g, '.')}}</text>
+  </view>
+  <view style="flex:1;" a:if="{{ unit.jmlhBlanja==0 }}">
+    <button onTap="addItemBuy" type="ghost"  shape="capsule"  data-itemId={{unit.id}} capsuleSize="large">
+      Tambah
+     </button>
+  </view>
+  <view style="flex:1;display:flex;justify-content:center;align-items:center" a:if="{{ unit.jmlhBlanja!==0 }}">
+    <view data-itemId={{unit.id}}  onTap="minusItemBuy" style="font-size:50rpx;font-weight:700;color:green" >
+      <icon type="MinusCircleOutline" />
+    </view>
+    <text style="font-size:35rpx;margin:0 20rpx;font-weight:500">{{unit.jmlhBlanja}}</text>
+    <view data-itemId={{unit.id}}  onTap="addItemBuy" style="font-size:50rpx;font-weight:700;color:green" >
+      <icon type="AddCircleOutline" />
+    </view>
+  </view>
+</view>

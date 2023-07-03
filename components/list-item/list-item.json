@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "icon": "antd-mini/es/Icon/index",
+    "button": "mini-ali-ui/es/button/index"
+  }
+}

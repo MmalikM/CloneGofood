@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "",
+ "usingComponents": {
+   "container": "mini-ali-ui/es/container/index",
+   "title": "mini-ali-ui/es/title/index",
+   "icon": "antd-mini/es/Icon/index"
+ }
+}

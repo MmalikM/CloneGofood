@@ -1,0 +1,23 @@
+<view class="alamat">
+  <button class="row-alamat" onTap="logout" style="flex:1">
+      <icon type="TextDeletionOutline" style="font-size:30px" />
+  </button>
+  <view class="row-alamat" style="flex:5;">
+    <view>
+      <text style="color:grey; font-size:25rpx">
+        lokasi kamu
+        <icon type="DownOutline" style="margin-left:10px; font-weight:bold; color:red" />
+      </text>
+    </view>
+    <view>
+      <text>
+        alamat
+      </text>
+    </view>
+  </view>
+  <view class="row-alamats" style="flex:1">
+    <container>
+      <icon type="" style="font-size:30px" />
+    </container>
+  </view>
+</view>

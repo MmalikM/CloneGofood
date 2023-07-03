@@ -1,0 +1,32 @@
+<view class="list-item" a:if="{{ unit.status === title }}">
+  <view style="flex:2;display:flex;" data-id={{unit.id}} onTap="onTabHandle">
+    <view class="list-item-detail" > 
+      <text style="font-weight:bold; font-size:32rpx">({{unit.id}}) {{unit.nameItem}}</text>
+      <text style="font-size:25rpx;margin-top:8px">{{unit.detail}}</text>
+      <text style="font-size:25rpx;margin-top:8px;font-weight:bold">{{unit.harga.toLocaleString("id-ID", { maximumFractionDigits: 0 }).replace(/,/g, '.')}}</text>
+    </view>
+    <view class="list-img" >
+      <image mode="scaleToFill" src="{{unit.ImageUrl}}" />
+    </view>
+  </view>
+  <view style="display:flex;margin:20rpx" >
+    <view style="flex:1;display:flex;justify-content:center;align-items:center">
+      <icon type="HeartOutline" style="font-size:45rpx" />
+    </view>
+    <view style="flex:5"/>
+    <view style="flex:2;display:flex;justify-content:center;align-items:center" a:if="{{ unit.jmlhBlanja==0 }}">
+      <button onTap="addItemBuy" type="ghost"  shape="capsule" data-itemId={{unit.id}}  capsuleSize="large">
+        Tambah
+       </button>
+    </view>
+    <view style="flex:2;display:flex;justify-content:center;align-items:center" a:if="{{ unit.jmlhBlanja!==0 }}">
+      <view data-itemId={{unit.id}}  onTap="minusItemBuy" style="font-size:45rpx;font-weight:700;color:green" >
+        <icon type="MinusCircleOutline" />
+      </view>
+      <text style="font-size:30rpx;margin:0 20rpx;font-weight:500">{{unit.jmlhBlanja}}</text>
+      <view data-itemId={{unit.id}}  onTap="addItemBuy" style="font-size:45rpx;font-weight:700;color:green" >
+        <icon type="AddCircleOutline" />
+      </view>
+    </view>
+  </view>
+ </view>

@@ -1,0 +1,45 @@
+.list-item-category{
+  display: flex;
+  height: 200rpx;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.img-list-category{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.img-list-category image{
+  height: 80%;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.skeleton {
+  position: relative;
+  background-color: #becadf;
+  overflow: hidden;
+}
+
+.skeleton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #e4eaf455, transparent);
+  animation: skeletonAnimation 1.5s infinite linear;
+}
+
+@keyframes skeletonAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
