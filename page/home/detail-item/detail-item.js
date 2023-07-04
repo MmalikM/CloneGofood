@@ -1756,59 +1756,59 @@ Page({
   onLoad(query){
 
     
-    const getAccessToken = my.getStorageSync({key:"accessToken"}).data
-    const getRefreshToken = my.getStorageSync({key:"refreshToken"}).data
-    const getEmail = my.getStorageSync({key:'email'}).data
+    // const getAccessToken = my.getStorageSync({key:"accessToken"}).data
+    // const getRefreshToken = my.getStorageSync({key:"refreshToken"}).data
+    // const getEmail = my.getStorageSync({key:'email'}).data
     
-    function refresh (){
-      console.log("refersh kepanggil <<<<<<<<<<<<<<< ")
-      my.httpRequest({
-        url: 'http://localhost:3000/refresh',
-        method: 'POST',
-        data: {
-          email:getEmail,
-          refreshToken:getRefreshToken
-        },
-        success: (res) => {
-          const newAccessToken = res.data.accessToken
-          my.removeStorageSync({key:"accessToken"})
-          my.setStorageSync({
-            key: "accessToken",
-            data: newAccessToken
-          })
-          cekToken(newAccessToken)
-        },
-        fail: (err) => {
-          console.log(err)
-          my.clearStorage()
-          my.redirectTo({
-            url:'/page/login/login'
-          })
-        },
-      });
-    }
+    // function refresh (){
+    //   console.log("refersh kepanggil <<<<<<<<<<<<<<< ")
+    //   my.httpRequest({
+    //     url: 'http://localhost:3000/refresh',
+    //     method: 'POST',
+    //     data: {
+    //       email:getEmail,
+    //       refreshToken:getRefreshToken
+    //     },
+    //     success: (res) => {
+    //       const newAccessToken = res.data.accessToken
+    //       my.removeStorageSync({key:"accessToken"})
+    //       my.setStorageSync({
+    //         key: "accessToken",
+    //         data: newAccessToken
+    //       })
+    //       cekToken(newAccessToken)
+    //     },
+    //     fail: (err) => {
+    //       console.log(err)
+    //       my.clearStorage()
+    //       my.redirectTo({
+    //         url:'/page/login/login'
+    //       })
+    //     },
+    //   });
+    // }
 
-    function cekToken(accessToken){
-      my.httpRequest({
-        url: 'http://localhost:3000/protected',
-        headers:{
-          'Authorization': 'Bearer ' + accessToken
-        },
-        method: 'GET',
-        success: (res) => {
-          const status = res.data.success
-          if(status){
-            console.log("token asli >>>>> ", accessToken)
-          }
-          console.log("masuk sukses")
-        },
-        fail: (err) => {
-          refresh()
-        },
-      });
-    }
+    // function cekToken(accessToken){
+    //   my.httpRequest({
+    //     url: 'http://localhost:3000/protected',
+    //     headers:{
+    //       'Authorization': 'Bearer ' + accessToken
+    //     },
+    //     method: 'GET',
+    //     success: (res) => {
+    //       const status = res.data.success
+    //       if(status){
+    //         console.log("token asli >>>>> ", accessToken)
+    //       }
+    //       console.log("masuk sukses")
+    //     },
+    //     fail: (err) => {
+    //       refresh()
+    //     },
+    //   });
+    // }
 
-    cekToken(getAccessToken)
+    // cekToken(getAccessToken)
     
 
     const {id} = query
@@ -1866,7 +1866,7 @@ Page({
 
     console.log("hasil reset >>>>", this.data.resultFind.menus[0])
     my.switchTab({
-      url:"/page/riwayat/riwayat"
+      url:"/page/tabBar/riwayat/riwayat"
     })
   },  
   closeModal() {

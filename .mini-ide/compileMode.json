@@ -1,0 +1,14 @@
+{
+  "modes": [
+    {
+      "title": "home",
+      "page": "page/tabBar/home/home",
+      "pageQuery": ""
+    },
+    {
+      "title": "login",
+      "page": "page/intro/login/login",
+      "pageQuery": ""
+    }
+  ]
+}

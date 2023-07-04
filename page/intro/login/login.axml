@@ -35,5 +35,6 @@
   </container>
   <view style="display:flex;justify-content:center;align-items:center; margin-top:50rpx">
     <text style="color:blue" onTap="goHelp">About BNI ?</text>
+
   </view>
 </view>

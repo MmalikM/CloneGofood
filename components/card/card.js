@@ -13,7 +13,7 @@ Component({
     goCart(e){
       const id = e.target.dataset.index
       my.navigateTo({
-        url: "/page/detail-item/detail-item?id="+id
+        url: "/page/home/detail-item/detail-item?id="+id
       })
     },
     onLoadImage(){

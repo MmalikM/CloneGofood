@@ -104,7 +104,7 @@ Page({
   },
   goSearch(){
     my.switchTab({
-      url:"/page/search/search"
+      url:"/page/tabBar/riwayat/riwayat"
     })
   },
   onItemClick(){

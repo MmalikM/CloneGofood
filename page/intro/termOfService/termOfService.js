@@ -27,7 +27,7 @@ Page({
   goHome(){
     console.log("repon accept <<<<<<<")
     my.switchTab({
-      url:"/page/home/home"
+      url:"/page/tabBar/home/home"
     })
   }
 });

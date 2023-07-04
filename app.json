@@ -1,40 +1,73 @@
 {
   "pages": [
-    "page/login/login",
-    "page/home/home",
+    "page/tabBar/home/home",
     "page/profile/profile",
-    "page/webView/webView",
-    "page/search/search",
-    "page/detail-item/detail-item",
-    "page/riwayat/riwayat",
-    "page/category/category",
-    "page/register/register",
-    "page/detail/detail",
-    "page/termOfService/termOfService"
+    "page/tabBar/search/search",
+    "page/home/detail-item/detail-item",
+    "page/tabBar/riwayat/riwayat",
+    "page/intro/login/login"
   ],
+
+  "subPackages": [
+    {
+      "root": "page/home",
+      "pages": [
+        "detail-item/detail-item"
+      ]
+    },
+    {
+      "root": "page/intro",
+      "pages": [
+        "termOfService/termOfService",
+        "webView/webView"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "page/tabBar/home/home":{
+      "network": "all",
+      "packages": [
+        "page/home"
+      ]
+    },
+    "page/intro/login/login":{
+      "network": "all",
+      "packages": [
+        "page/intro"
+      ]
+    }
+  },
+  "window": {
+    "defaultTitle": "小程序",
+    "backgroundColor": "#F5F5F9",
+    "pullRefresh": false,
+    "allowsBounceVertical": "YES",
+    "titleBarColor": "#fff"
+  },
   "tabBar": {
     "textColor": "#404040",
     "selectedColor": "#108ee9",
     "backgroundColor": "#F5F5F9",
     "items": [
       {
-        "pagePath": "page/home/home",
+        "pagePath": "page/tabBar/home/home",
         "icon": "image/icon_component.png",
         "activeIcon": "image/icon_component_HL.png",
         "name": "home"
       },
       {
-        "pagePath": "page/search/search",
+        "pagePath": "page/tabBar/search/search",
         "icon": "image/icon_component.png",
         "activeIcon": "image/icon_component_HL.png",
         "name": "search"
       },
       {
-        "pagePath": "page/riwayat/riwayat",
+        "pagePath": "page/tabBar/riwayat/riwayat",
         "icon": "image/icon_component.png",
         "activeIcon": "image/icon_component_HL.png",
         "name": "riwayat"
       }
     ]
-  }
+  },
+  "subPackageBuildType": "shared"
 }

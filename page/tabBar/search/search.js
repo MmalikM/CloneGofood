@@ -1511,7 +1511,7 @@ Page({
     if(getApp().globalData.riwayatPencarian.length === 0) getApp().globalData.riwayatPencarian =[detailItem]
     
     my.redirectTo({
-      url:"/page/detail-item/detail-item?id="+id
+      url:"/page/home/detail-item/detail-item?id="+id
     })
   },
 });
